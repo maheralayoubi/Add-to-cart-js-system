@@ -16,7 +16,12 @@ let cart = [];
 // Getting the products from json
 class Products {
     async getProducts() {
-        fetch('products.json')
+        try {
+            let result = await fetch('products.json');
+            return result;
+        } catch (error) {
+            console.log(error);
+        }
     }
 }
 
@@ -34,4 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Instances
     const ui = new UI()
     const products = new Products()
+
+    // Get all products
+    products.getProducts().then(data => console.log(data));
 });
