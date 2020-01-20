@@ -15,7 +15,9 @@ let cart = [];
 
 // Getting the products from json
 class Products {
-
+    async getProducts() {
+        fetch('products.json')
+    }
 }
 
 // Display products
@@ -29,6 +31,7 @@ class Storage {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    // Instances
     const ui = new UI()
     const products = new Products()
 });
