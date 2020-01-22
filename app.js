@@ -47,7 +47,22 @@ class Products {
 // Display products
 class UI {
     displayProducts(products) {
-        console.log(products);
+        let result = '';
+        products.forEach(product => {
+            // Adding stuff to the variable
+            result += `<!--Single Product-->
+                        <article class = "product" >
+                            <div class = "img-container" >
+                            <img src = ${product.image} alt="product" class="product-img" >
+                            <button class = "bag-btn" data-id = ${product.id} >
+                            <i class="fas fa-shopping-cart"> </i>add to bag
+                            </button> 
+                            </div> <h3> ${product.title} </h3>
+                                   <h4> ${product.price} </h4>
+                            </article>
+                        <!--End Of Single Product-->`;
+        });
+        productsDOM.innerHTML = result;
     }
 }
 
