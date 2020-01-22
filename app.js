@@ -29,9 +29,7 @@ class Products {
                 const {
                     id
                 } = item.sys;
-                const {
-                    image
-                } = item.fields.image.fields.file.url;
+                const image = item.fields.image.fields.file.url;
                 return {
                     title,
                     price,
@@ -47,7 +45,11 @@ class Products {
 }
 
 // Display products
-class UI {}
+class UI {
+    displayProducts(products) {
+        console.log(products);
+    }
+}
 
 // Local storage
 class Storage {}
@@ -58,5 +60,5 @@ document.addEventListener("DOMContentLoaded", () => {
     const products = new Products();
 
     // Get all products
-    products.getProducts().then(data => console.log(data));
+    products.getProducts().then(products => ui.displayProducts(products));
 });
