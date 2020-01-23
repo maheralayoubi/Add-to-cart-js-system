@@ -67,7 +67,12 @@ class UI {
 }
 
 // Local storage
-class Storage {}
+class Storage {
+    static saveProducts(products) {
+        // This will make products array a string
+        localStorage.setItem("product", JSON.stringify(products));
+    }
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     // Instances
@@ -75,5 +80,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const products = new Products();
 
     // Get all products
-    products.getProducts().then(products => ui.displayProducts(products));
+    products.getProducts().then(products => {
+        // Displaying the products
+        ui.displayProducts(products)
+        // Save the products in the local storage
+        Storage.saveProducts(products);
+    });
+
 });
