@@ -13,6 +13,9 @@ const productsDOM = document.querySelector(".products-center");
 // Cart
 let cart = [];
 
+// Buttons
+let buttonsDOM = [];
+
 // Getting the products from json
 class Products {
   async getProducts() {
@@ -62,6 +65,7 @@ class UI {
   getBagButtons() {
     // [...] will make the node list into an array
     const buttons = [...document.querySelectorAll(".bag-btn")];
+    buttonsDOM = buttons;
     buttons.forEach(button => {
       let id = button.dataset.id;
       // If the item id matches the id in the button do something
@@ -70,13 +74,18 @@ class UI {
       if (inCart) {
         button.innerText = "In Cart";
         button.disabled = true;
-      } else {
-        // If the item is not in the cart
-        button.addEventListener("click", event => {
-          event.target.innerText = "In Cart";
-          event.target.disabled = true;
-        });
       }
+      // If the item is not in the cart
+      button.addEventListener("click", event => {
+        event.target.innerText = "In Cart";
+        event.target.disabled = true;
+        // Get product from products
+        // Add product to the cart
+        // Save cart in local storage
+        // set cart values
+        // add or display cart item
+        // show the cart
+      });
     });
   }
 }
