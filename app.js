@@ -64,6 +64,13 @@ class UI {
         });
         productsDOM.innerHTML = result;
     }
+    getBagButtons() {
+        // [...] will make the node list into an array
+        const buttons = [...document.querySelectorAll(".bag-btn")];
+        buttons.forEach(button => {
+            let id = button.dataset.id;
+        })
+    }
 }
 
 // Local storage
@@ -82,9 +89,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // Get all products
     products.getProducts().then(products => {
         // Displaying the products
-        ui.displayProducts(products)
+        ui.displayProducts(products);
         // Save the products in the local storage
         Storage.saveProducts(products);
+    }).then(() => {
+        ui.getBagButtons();
     });
 
 });
