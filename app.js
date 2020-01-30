@@ -112,6 +112,9 @@ class Storage {
         // Get the product if the id is matching the id passed
         return products.find(product => product.id === id);
     }
+    static saveCart(cart) {
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
