@@ -90,7 +90,9 @@ class UI {
                     amount: 1
                 };
                 // Add product to the cart
+                cart = [...cart, cartItem];
                 // Save cart in local storage
+                Storage.saveCart(cart)
                 // set cart values
                 // add or display cart item
                 // show the cart
