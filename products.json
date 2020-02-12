@@ -126,6 +126,86 @@
           }
         }
       }
+    },
+    {
+      "sys": {
+        "id": "9"
+      },
+      "fields": {
+        "title": "table",
+        "price": 33.99,
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./images/product-8.jpeg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "10"
+      },
+      "fields": {
+        "title": "table",
+        "price": 33.99,
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./images/product-8.jpeg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "11"
+      },
+      "fields": {
+        "title": "table",
+        "price": 33.99,
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./images/product-8.jpeg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "12"
+      },
+      "fields": {
+        "title": "table",
+        "price": 33.99,
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./images/product-8.jpeg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "13"
+      },
+      "fields": {
+        "title": "table",
+        "price": 33.99,
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./images/product-8.jpeg"
+            }
+          }
+        }
+      }
     }
   ]
 }
