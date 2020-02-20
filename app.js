@@ -25,8 +25,13 @@ class Products {
       let products = data.items;
       // Products array
       products = products.map(item => {
-        const { title, price } = item.fields;
-        const { id } = item.sys;
+        const {
+          title,
+          price
+        } = item.fields;
+        const {
+          id
+        } = item.sys;
         const image = item.fields.image.fields.file.url;
         return {
           title,
@@ -161,9 +166,8 @@ class Storage {
   }
   static getCart() {
     // If there an item in local storage in the cart array then we return that arry if not, return []
-    return localStorage.getItem("cart")
-      ? JSON.parse(localStorage.getItem("cart"))
-      : [];
+    return localStorage.getItem("cart") ?
+      JSON.parse(localStorage.getItem("cart")) : [];
   }
 }
 
