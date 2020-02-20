@@ -148,6 +148,23 @@ class UI {
     cartOverlay.classList.remove("transparentBcg");
     cartDOM.classList.remove("showCart");
   }
+  cartLogic() {
+    // Pointing "this" with () => to access within the class.
+    clearCartBtn.addEventListener('click', () => {
+      this.clearCart();
+    });
+  }
+  clearCart() {
+    let cartItems = cart.map(item => item.id);
+    // Loop through the arry and remove the item with the particular id
+    cartItems.forEach(id => this.removeItem(id))
+  }
+  removeItem(id) {
+    cart = cart.filter(item => item.id !== id)
+    // Update the cart with the resent value
+    this.setCartValues(cart);
+    Storage.saveCart(cart);
+  }
 }
 
 // Local storage
@@ -166,8 +183,7 @@ class Storage {
   }
   static getCart() {
     // If there an item in local storage in the cart array then we return that arry if not, return []
-    return localStorage.getItem("cart") ?
-      JSON.parse(localStorage.getItem("cart")) : [];
+    return localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : [];
   }
 }
 
@@ -190,5 +206,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .then(() => {
       ui.getBagButtons();
+      ui.cartLogic();
     });
 });
