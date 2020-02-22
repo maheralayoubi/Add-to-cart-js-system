@@ -164,6 +164,13 @@ class UI {
     // Update the cart with the resent value
     this.setCartValues(cart);
     Storage.saveCart(cart);
+    let button = this.getSingleButton(id);
+    button.disabled = false;
+    botton.innerHTML = `<i class="fas fa-shoppingcart"></i>add to cart`
+  }
+  getSingleButton(id) {
+    // get me the button that used at the same item with same id
+    return buttonsDOM.find(button => button.dataset.id === id);
   }
 }
 
