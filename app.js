@@ -157,7 +157,12 @@ class UI {
   clearCart() {
     let cartItems = cart.map(item => item.id);
     // Loop through the arry and remove the item with the particular id
-    cartItems.forEach(id => this.removeItem(id))
+    cartItems.forEach(id => this.removeItem(id));
+    // While the cart has iteme keep removing them
+    while (cartContent.children.length > 0) {
+      cartContent.removeChild(cartContent.children[0]);
+      this.hideCart();
+    }
   }
   removeItem(id) {
     cart = cart.filter(item => item.id !== id)
