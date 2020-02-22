@@ -171,7 +171,7 @@ class UI {
     Storage.saveCart(cart);
     let button = this.getSingleButton(id);
     button.disabled = false;
-    botton.innerHTML = `<i class="fas fa-shoppingcart"></i>add to cart`
+    button.innerHTML = `<i class="fas fa-shoppingcart"></i>add to cart`;
   }
   getSingleButton(id) {
     // get me the button that used at the same item with same id
