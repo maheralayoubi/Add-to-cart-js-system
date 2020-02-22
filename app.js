@@ -58,7 +58,7 @@ class UI {
                             <div class = "img-container" >
                             <img src = ${product.image} alt="product" class="product-img" >
                             <button class = "bag-btn" data-id = ${product.id} >
-                            <i class="fas fa-shopping-cart"> </i>add to bag
+                            <i class="fas fa-shopping-cart"> </i>add to cart
                             </button> 
                             </div> <h3> ${product.title} </h3>
                                    <h4> ${product.price} </h4>
@@ -161,8 +161,8 @@ class UI {
     // While the cart has iteme keep removing them
     while (cartContent.children.length > 0) {
       cartContent.removeChild(cartContent.children[0]);
-      this.hideCart();
     }
+    this.hideCart();
   }
   removeItem(id) {
     cart = cart.filter(item => item.id !== id)
