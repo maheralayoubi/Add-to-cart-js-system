@@ -160,6 +160,8 @@ class UI {
         let id = removeItem.dataset.id;
         cartContent.removeChild(removeItem.parentElement.parentElement);
         this.removeItem(id);
+      } else if (event.target.classList.contains('fa-chevron-up')) {
+
       }
     })
   }
